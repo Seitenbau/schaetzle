@@ -7,10 +7,10 @@
 <body>
 
 <div th:text="${'Hallo ' + user.name}"></div>
-<label for="session">Session auswählen:</label>
-<form th:action="@{'/join'}" method="post" >
+<div th:text="${sch_session.uuid}"></div>
+<div th:text="${'Schätzung für <' + sch_session.storyForEstimation().title + '> abgeben'} "></div>
+<form th:action="@{'/vote'}" method="post" >
 
-    <input th:field="${session.uuid}" />
     <input type="submit" id="session" />
 </form>
 </body>

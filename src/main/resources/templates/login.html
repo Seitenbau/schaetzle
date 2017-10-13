@@ -8,6 +8,7 @@
 <label for="username">Login:</label>
 <form th:action="@{'/login'}" method="post" >
     <input th:field="${user.name}" />
+    <input type="hidden" th:field="${user.sessionId}"/>
     <input type="submit" id="username" />
 </form>
 </body>
