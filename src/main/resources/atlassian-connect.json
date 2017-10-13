@@ -1,7 +1,7 @@
 {
-  "key": "atlassian-connect-spring-boot-sample-thymeleaf",
+  "key": "com-seitenbau-hackathon-schaetzle-service",
   "baseUrl": "${addon.base-url}",
-  "name": "Atlassian Connect Spring Boot Thymeleaf Sample",
+  "name": "Schaetzle Service",
   "authentication": {
     "type": "jwt"
   },
@@ -15,7 +15,7 @@
         "key": "thymeleaf-page-jira",
         "location": "system.top.navigation.bar",
         "name": {
-          "value": "Thymeleaf"
+          "value": "Schätzle PM"
         },
         "url": "/thymeleaf"
       },
@@ -23,7 +23,7 @@
         "key": "thymeleaf-page-confluence",
         "location": "system.header/left",
         "name": {
-          "value": "Thymeleaf"
+          "value": "Schätzle PM"
         },
         "url": "/thymeleaf"
       }
