@@ -1,0 +1,32 @@
+{
+  "key": "atlassian-connect-spring-boot-sample-thymeleaf",
+  "baseUrl": "${addon.base-url}",
+  "name": "Atlassian Connect Spring Boot Thymeleaf Sample",
+  "authentication": {
+    "type": "jwt"
+  },
+  "lifecycle": {
+    "installed": "/installed",
+    "uninstalled": "/uninstalled"
+  },
+  "modules": {
+    "generalPages": [
+      {
+        "key": "thymeleaf-page-jira",
+        "location": "system.top.navigation.bar",
+        "name": {
+          "value": "Thymeleaf"
+        },
+        "url": "/thymeleaf"
+      },
+      {
+        "key": "thymeleaf-page-confluence",
+        "location": "system.header/left",
+        "name": {
+          "value": "Thymeleaf"
+        },
+        "url": "/thymeleaf"
+      }
+    ]
+  }
+}
