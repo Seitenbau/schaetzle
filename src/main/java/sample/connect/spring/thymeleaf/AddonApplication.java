@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
     LiquibaseAutoConfiguration.class,
     LiquibaseAutoConfiguration.LiquibaseConfiguration.class
 })
-@ComponentScan
+@ComponentScan(basePackages = {"sample","sb"})
 public class AddonApplication {
 
     public static void main(String[] args) throws Exception {
