@@ -11,6 +11,9 @@
 <div th:text="${'Schätzung für <' + sch_session.storyForEstimation().title + '> abgeben'} "></div>
 <form th:action="@{'/vote'}" method="post" >
     <input type="hidden" th:field="${story.uuid}">
+    <input type="hidden" th:field="${story.externalId}">
+    <input type="hidden" th:field="${story.title}">
+
     <select name="estimation">
         <option value="1">1</option>
         <option value="2">2</option>

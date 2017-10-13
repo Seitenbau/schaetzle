@@ -62,7 +62,9 @@ public class LoginController
   @PostMapping
   public String vote(@ModelAttribute("story") Story story, @RequestParam("estimation") Integer estimation)
   {
-    log.info("asdf {}", estimation);
+    User user = loginService.getUser();
+    log.info("{} estimated {} for story {} ({})"
+        , user.getName(), estimation, story.getTitle(), story.getExternalId());
     return "redirect:/voting";
   }
 
