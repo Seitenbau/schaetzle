@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import lombok.extern.slf4j.Slf4j;
 import sb.hackathon.model.Session;
+import sb.hackathon.model.Story;
 import sb.hackathon.model.User;
 import sb.hackathon.service.LoginService;
 import sb.hackathon.service.SessionService;
@@ -25,7 +27,7 @@ public class LoginController
   @Autowired
   private SessionService sessionService;
 
-  @GetMapping("/start/{sessionId}")
+  @GetMapping("/session/{sessionId}")
   public String loginView(Model model, @PathVariable("sessionId") String sessionId)
   {
     log.info("login get");
@@ -50,14 +52,17 @@ public class LoginController
     User user = loginService.getUser();
     model.addAttribute("user", user);
     Session session = sessionService.getById(user.getSessionId());
+    Story story = session.storyForEstimation();
     model.addAttribute("sch_session", session);
+    model.addAttribute("story", story);
 
     return "vote";
   }
 
   @PostMapping
-  public String vote()
+  public String vote(@ModelAttribute("story") Story story, @RequestParam("estimation") Integer estimation)
   {
+    log.info("asdf {}", estimation);
     return "redirect:/voting";
   }
 

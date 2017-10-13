@@ -29,7 +29,7 @@ public class SessionService
       session.setUuid("test123");
       session.setStories(new ArrayList<>());
       Story story = new Story();
-      story.setTitle("story title");
+      story.setTitle("Schätzle ist cool!");
       story.setExternalId("SCHEATZLE-123");
 
       session.getStories().add(story);
