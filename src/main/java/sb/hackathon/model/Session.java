@@ -1,4 +1,4 @@
-package sb.hackathon.ui.model;
+package sb.hackathon.model;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,18 @@
 package sample.connect.spring.thymeleaf;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@EnableAutoConfiguration(exclude = {
+    LiquibaseAutoConfiguration.class,
+    LiquibaseAutoConfiguration.LiquibaseConfiguration.class
+})
+@ComponentScan
 public class AddonApplication {
 
     public static void main(String[] args) throws Exception {
