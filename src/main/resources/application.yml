@@ -6,4 +6,4 @@ addon.base-url: https://schaetzle.eu.ngrok.io
 logging.level.com.atlassian.connect.spring: DEBUG
 spring.thymeleaf.cache: false
 
-security.ignored: /start, /login, /scan, /session/**
+security.ignored: /session/**, /login, /voting, /vote
